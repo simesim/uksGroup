@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>УКС Груп</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <div class="logo">
+        <img src="logo.webp" alt="УКС Груп">
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a href="#about">О НАС <span class="triangle"></span></a>
+                <div class="dropdown">Информация о компании</div>
+            </li>
+            <li>
+                <a href="#products">НАША ПРОДУКЦИЯ <span class="triangle"></span></a>
+                <div class="dropdown">Список продукции</div>
+            </li>
+            <li>
+                <a href="#projects">ПРОЕКТЫ <span class="triangle"></span></a>
+                <div class="dropdown">Наши проекты</div>
+            </li>
+            <li>
+                <a href="#contact">КОНТАКТЫ <span class="triangle"></span></a>
+                <div class="dropdown">Контактная информация</div>
+            </li>
+        </ul>
+    </nav>
+    <div class="contact-info">
+        <img src="telefon.webp" alt="Phone Icon" class="phone-icon">
+        <a href="tel:+1234567890">+1234567890</a>
+        <a href="mailto:sales@uksgroup.ru" style="color: #F3F3F3;">sales@uksgroup.ru</a>
+        <a href="https://wa.me/1234567890" target="_blank">
+            <img src="w.webp" class="whatsapp-btn">
+        </a>
+    </div>
+</header>
+
+<!-- Slider -->
+<section class="slider">
+    <div class="slider-text">"ЗАВОД"<br><span
+            style="color: #FC500B;">ОГНЕСТОЙКИХ</span><br>СВЕТОПРОЗРАЧНЫХ<br>КОНСТРУКЦИЙ</div>
+    <div class="slides">
+        <div class="slide active" style="background-image: url('bg1.jpeg');"></div>
+        <div class="slide" style="background-image: url('bg2.jpeg');"></div>
+    </div>
+    <button class="slider-btn prev-btn">&larr;</button>
+    <button class="slider-btn next-btn">&rarr;</button>
+    <button class="cta-btn">Оставить заявку на расчёт</button>
+</section>
+
+<!-- Black Strip -->
+<div class="black-strip">
+    <span class="arrow">
+        <svg width="46.5" height="10" viewBox="0 0 46.5 10">
+            <line x1="0" y1="5" x2="41.5" y2="5" stroke-width="2" stroke="#FC500B" />
+            <polyline points="41.5,0 46.5,5 41.5,10" fill="none" stroke-width="2" stroke="#FC500B" />
+        </svg>
+    </span>
+    <p>ПРОЕКТИРОВАНИЕ</p>
+    <div class="arrow"><svg width="46.5" height="10" viewBox="0 0 46.5 10">
+            <line x1="0" y1="5" x2="41.5" y2="5" stroke-width="2" stroke="#FC500B" />
+            <polyline points="41.5,0 46.5,5 41.5,10" fill="none" stroke-width="2" stroke="#FC500B" />
+        </svg>
+    </div>
+    <p>ПРОИЗВОДСТВО</p>
+    <div class="arrow"><svg width="46.5" height="10" viewBox="0 0 46.5 10">
+            <line x1="0" y1="5" x2="41.5" y2="5" stroke-width="2" stroke="#FC500B" />
+            <polyline points="41.5,0 46.5,5 41.5,10" fill="none" stroke-width="2" stroke="#FC500B" />
+        </svg>
+    </div>
+    <p>ДОСТАВКА</p>
+    <div class="arrow"><svg width="46.5" height="10" viewBox="0 0 46.5 10">
+            <line x1="0" y1="5" x2="41.5" y2="5" stroke-width="2" stroke="#FC500B" />
+            <polyline points="41.5,0 46.5,5 41.5,10" fill="none" stroke-width="2" stroke="#FC500B" />
+        </svg>
+    </div>
+    <p>МОНТАЖ</p>
+</div>
+
+<section id="products" class="products">
+    <div class="section-title-flex">
+        <div class="title-rectangle"></div>
+        <h2 class="section-title"><span style="color: #676767;">НАША</span><br><span style="color: #1C1E40;">ПРОДУКЦИЯ</span></h2>
+    </div>
+    <div class="product-grid">
+        <div class="product-item" style="background: url('photo1.webp') lightgray 50% / cover no-repeat;">
+            <span class="extra-text">ПРОТИВОПОЖАРНЫЕ<br>СВЕТОПРОЗРАЧНЫЕ</span>
+            <span>Двери</span>
+        </div>
+        <div class="product-item" style="background: url('photo2.webp') lightgray 50% / cover no-repeat;">
+            <span class="extra-text">ПРОТИВОПОЖАРНЫЕ</span>
+            <span>Фасады</span>
+        </div>
+        <div class="product-item" style="background: url('photo3.webp') lightgray 50% / cover no-repeat;">
+            <span class="extra-text">ПРОТИВОПОЖАРНЫЕ</span>
+            <span>Перегородки</span>
+        </div>
+        <div class="product-item" style="background: url('photo4.webp') lightgray 50% / cover no-repeat;">
+            <span>Фасадные <br>решения</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- Проекты -->
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="header">
+            <div class="orange-rectangle"></div>
+            <h1 class="title">ПРОЕКТЫ</h1>
+        </div>
+        <div class="button-group">
+            <button class="button active" onclick="changeSection('dveri', this)">Двери</button>
+            <button class="button" onclick="changeSection('peregorodki', this)">Перегородки</button>
+            <button class="button" onclick="changeSection('okna', this)">Окна</button>
+            <button class="button" onclick="changeSection('vitrazhi', this)">Витражи</button>
+        </div>
+        <div class="content wide">
+            <div class="photo-container" id="photoContainer">
+                <div class="nav-button left" onclick="prevImage()">&lt;</div>
+                <div class="nav-button right" onclick="nextImage()">&gt;</div>
+            </div>
+            <div class="text-container">
+                <div>
+                    <h2 class="text-title" id="textTitle">СТУДЕНЧЕСКИЙ КАМПУС УРФУ, ЕКАТЕРИНБУРГ</h2>
+                    <p class="text-description" id="textDescription">
+                        Комплекс работ по проектированию, изготовлению и монтажу противопожарных конструкций «УКБ ФГУП»,
+                        в состав противопожарных конструкций входят противопожарные двери и коммерческая изоляция
+                        продуктов Alutech и стекла в Румольт.
+                    </p>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-button outline">Оставить заявку</button>
+                    <button class="action-button filled">Узнать больше</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="aboutus-section">
+    <div class="aboutus-container">
+        <div class="aboutus-photo" id="photoBlock">
+            <button class="aboutus-arrow-btn aboutus-arrow-left" id="prevBtn">&#8249;</button>
+            <button class="aboutus-arrow-btn aboutus-arrow-right" id="nextBtn">&#8250;</button>
+        </div>
+        <div class="aboutus-text">
+            <div class="aboutus-header">
+                <h1 class="aboutus-title">О НАС</h1>
+                <div class="aboutus-orange-line"></div>
+            </div>
+            <p class="aboutus-regular-text"><b>Предприятие, специализирующееся на изготовлении огнестойких
+                    светопрозрачных конструкций, применяемых для противопожарного оборудования зданий и сооружений
+                    любого назначения, включая коммерческие, жилые, производственные и промышленные объекты.</b></p>
+            <p class="aboutus-bold-text">ООО «УКС ГРУП» осуществляет полный цикл работ, связанных с разработкой
+                технического задания, проектированием, изготовлением, организацией поставок, монтажом и обслуживанием
+                огнестойких светопрозрачных конструкций с применением высококачественного противопожарного стального или
+                алюминиевого профиля и огнеупорного стекла.</p>
+            <button class="aboutus-button">Узнать больше</button>
+        </div>
+    </div>
+</section>
+
+<!-- Статус -->
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stat-item">
+            <span class="stat-number">25</span>
+            <p class="stat-text">ЛЕТ НА<br>РЫНКЕ</p>
+        </div>
+        <span class="dot"></span>
+        <div class="stat-item">
+            <span class="stat-number">200</span>
+            <p class="stat-text">ТЫС. КВ. М<br>СДАННЫХ ОБЪЕКТОВ</p>
+        </div>
+        <span class="dot"></span>
+        <div class="stat-item">
+            <span class="stat-number">65</span>
+            <p class="stat-text">РЕГИОНОВ В<br>РФ И СНГ</p>
+        </div>
+        <span class="dot"></span>
+        <div class="stat-item">
+            <span class="stat-number">65</span>
+            <p class="stat-text">СЕРТИФИКАТОВ<br>СООТВЕТСТВИЯ</p>
+        </div>
+    </div>
+</section>
+
+<section id="video-container" style="width: 1160px; margin: 0 auto; margin-bottom: 100px;">
+    <iframe id="rutube-video" src="https://rutube.ru/play/embed/3be6647fcb0df250f8bf444121b116ae?autoplay=0"
+        frameborder="0" allow="autoplay; fullscreen" allowfullscreen
+        style="width: 100%; height: 653px; border-radius: 25px; overflow: hidden;">
+    </iframe>
+</section>
+
+<section class="project-form-section centered">
+    <div class="project-form-wrapper">
+        <h1 class="project-form-title">Получите информацию о проектировании, изготовлении и доставке продукции прямо
+            сейчас</h1>
+        <div class="project-form-input-row">
+            <input type="text" class="project-form-input short" placeholder="Название компании">
+            <input type="email" class="project-form-input short" placeholder="Ваша почта">
+        </div>
+        <input type="tel" class="project-form-input" placeholder="+7 (999) 999-99-99">
+        <input type="text" class="project-form-file" placeholder="Прикрепить файл">
+        <button class="project-form-submit">Оставить заявку</button>
+    </div>
+    <div class="project-form-man">
+        <div class="project-form-signature">
+            <span class="project-form-signature-text">ФИО Вакансия ответит на Ваши вопросы</span>
+            <div class="project-form-circle"></div>
+        </div>
+    </div>
+</section>
+
+<section class="certslider-section">
+    <h2 class="certslider-title">СЕРТИФИКАТЫ</h2>
+    <div class="certslider-wrapper">
+        <button class="certslider-btn certslider-prev">&lt;</button>
+        <div class="certslider-track-container">
+            <div class="certslider-track">
+                <div class="certslider-slide">
+                    <img src="cert1.webp" alt="Сертификат 1">
+                    <p>Действует до 09.08.2023 г.</p>
+                </div>
+                <div class="certslider-slide">
+                    <img src="cert1.webp" alt="Сертификат 2">
+                    <p>Однопольные огнестойкие двери... до 16.02.2026 г.</p>
+                </div>
+                <div class="certslider-slide">
+                    <img src="cert1.webp" alt="Сертификат 3">
+                    <p>Двупольные противопожарные двери... до 31.01.2027 г.</p>
+                </div>
+                <div class="certslider-slide">
+                    <img src="cert1.webp" alt="Сертификат 4">
+                    <p>Перегородка противопожарная... до 17.11.2025 г.</p>
+                </div>
+            </div>
+        </div>
+        <button class="certslider-btn certslider-next">&gt;</button>
+    </div>
+</section>
+
+
+<script src="script.js"></script>
+
+</html>
