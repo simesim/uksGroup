@@ -33,40 +33,53 @@ const sections = {
     title: 'СТУДЕНЧЕСКИЙ КАМПУС УРФУ, ЕКАТЕРИНБУРГ',
     description: 'Комплекс работ по проектированию, изготовлению и монтажу противопожарных конструкций выполнило ООО «УКС ГРУПП». В составе противопожарных конструкций комплекса используются двери и перегородки из профильной системы Alutech и стекла Pyrolut.',
     images: [
-      'photo1.webp',
-      'photo2.webp',
-      'photo3.webp',
-      'photo4.webp'
+      'img/projects/door1.webp',
+      'img/projects/door2.webp',
+      'img/projects/door3.jpg',
+      'img/projects/door4.jpg',
+      'img/projects/door5.webp',
+      'img/projects/door6.jpg',
+      'img/projects/door7.webp'
     ]
   },
   'peregorodki': {
     title: 'ДВОРЕЦ ВОДНЫХ ВИДОВ СПОРТА (ДВВС) ЕКАТЕРИНБУРГ',
     description: 'Работы по проектированию, изготовлению и монтажу противопожарных конструкций выполнило ООО «УКС ГРУП». В составе используются перегородки и двери из стального профиля Schuco и стекла Pyrolut с пределами огнестойкости EIW45 и EIW30 соответственно.',
     images: [
-      'photo1.webp',
-      'photo2.webp',
-      'photo3.webp',
-      'photo4.webp'
+      'img/projects/pere1.webp',
+      'img/projects/pere2.webp',
+      'img/projects/pere3.jpg',
+      'img/projects/pere4.jpg',
+      'img/projects/pere5.webp',
+      'img/projects/pere6.jpg',
+      'img/projects/pere7.jpg',
+      'img/projects/pere8.jpg',
+      'img/projects/pere9.webp'
     ]
   },
   'okna': {
     title: 'ДВОРЕЦ ВОДНЫХ ВИДОВ СПОРТА, КРЫМ',
     description: 'ООО «УКС ГРУП» выполнило работы по проектированию, производству и монтажу огнестойких витражей и дверей. Выполнены технически сложные работы по монтажу витража высотой более 9 метров со внутренними и наружными углами поворотов. В составе конструкций используются противопожарный профиль Alutech серии F50 и W62 с пределами огнестойкости EIW15 и EIW60.',
     images: [
-      'photo1.webp',
-      'photo2.webp',
-      'photo3.webp',
-      'photo4.webp'
+      'img/projects/okno1.webp',
+      'img/projects/okno2.webp',
+      'img/projects/okno3.jpg',
+      'img/projects/okno4.jpg',
+      'img/projects/okno5.jpg',
+      'img/projects/okno6.webp'
     ]
   },
   'vitrazhi': {
     title: 'КЛУБНЫЙ ДОМ "РИВЬЕРА". ЕКАТЕРИНБУРГ',
     description: 'Комплекс работ по остеклению Клубного дома "Ривьера", с использованием фасадных систем премиального уровня SCHUCO и AGC выполнил завод ООО «УКС груп».',
     images: [
-      'photo1.webp',
-      'photo2.webp',
-      'photo3.webp',
-      'photo4.webp'
+      'img/projects/vetr1.webp',
+      'img/projects/vetr2.webp',
+      'img/projects/vetr3.jpg',
+      'img/projects/vetr4.jpg',
+      'img/projects/vetr5.jpg',
+      'img/projects/vetr6.jpg',
+      'img/projects/vetr7.webp',
     ]
   }
 };
@@ -110,10 +123,12 @@ window.onload = function () {
 //о нас
 
 const images = [
-  'photo1.webp',
-  'photo2.webp',
-  'photo3.webp',
-  'photo4.webp'
+  'img/aboutus/ab1.webp',
+  'img/aboutus/ab2.webp',
+  'img/aboutus/ab3.webp',
+  'img/aboutus/ab4.webp',
+  'img/aboutus/ab5.webp',
+  'img/aboutus/ab6.webp'
 ];
 
 let currentIndex = 0;
@@ -191,3 +206,57 @@ function updateCertslider() {
   const slideWidth = document.querySelector('.certslider-slide').offsetWidth + 32; // 2 * 1rem margin
   certsliderTrack.style.transform = `translateX(-${certsliderIndex * slideWidth}px)`;
 }
+
+
+
+/* Модальное окно новостей */
+const modal = document.getElementById('NewsModal');
+  const modalTitle = document.getElementById('NewsModalTitle');
+  const modalImage = document.getElementById('NewsModalImage');
+  const modalText = document.getElementById('NewsModalText');
+
+  // Данные по новостям
+  const NewsData = [
+    {
+      title: 'НОВОСТЬ ОДИН',
+      image: 'img/news/n1.jpg',
+      text: `A balancing rock, also called balanced rock or precarious boulder, is a naturally occurring geological formation...`
+    },
+    {
+      title: 'НОВОСТЬ ДВА',
+      image: 'img/news/n2.jpg',
+      text: ``
+    },
+    {
+      title: 'НОВОСТЬ ТРИ',
+      image: 'img/news/n3.jpg',
+      text: ``
+    },
+    {
+      title: 'НОВОСТЬ ЧЕТЫРЕ',
+      image: 'img/news/n4.jpg',
+      text: ``
+    }
+  ];
+
+  // Привязка обработчиков ко всем карточкам
+  document.querySelectorAll('.news-card').forEach((card, index) => {
+    card.addEventListener('click', () => {
+      const news = NewsData[index];
+      modalTitle.innerText = news.title;
+      modalImage.src = news.image;
+      modalText.innerText = news.text;
+      modal.style.display = 'flex';
+    });
+  });
+
+  function closeNewsModal() {
+    modal.style.display = 'none';
+  }
+
+  // Закрытие по клику вне окна
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeNewsModal();
+    }
+  });
