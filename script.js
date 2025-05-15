@@ -169,43 +169,34 @@ function playRutubeVideo() {
 }
 
 // зона видимости
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      playRutubeVideo();
-      obs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.5 });
-
-observer.observe(document.getElementById('video-container'));
-
-
 const certsliderTrack = document.querySelector('.certslider-track');
+const certsliderSlides = document.querySelectorAll('.certslider-slide');
 const certsliderPrev = document.querySelector('.certslider-prev');
 const certsliderNext = document.querySelector('.certslider-next');
-
 let certsliderIndex = 0;
 
-certsliderPrev.addEventListener('click', () => {
-  if (certsliderIndex > 0) {
-    certsliderIndex--;
-    updateCertslider();
-  }
-});
+function updateCertslider() {
+    const slideWidth = certsliderSlides[0].offsetWidth + 16;
+    const offset = certsliderIndex * slideWidth;
+    certsliderTrack.style.transform = `translateX(-${offset}px)`;
+    certsliderPrev.disabled = false; // Enable prev button always
+    certsliderNext.disabled = false;
+    if (certsliderIndex === 0) certsliderPrev.disabled = true;
+    if (certsliderIndex === certsliderSlides.length - 4) certsliderNext.disabled = true;
+}
 
 certsliderNext.addEventListener('click', () => {
-  const slides = document.querySelectorAll('.certslider-slide');
-  if (certsliderIndex < slides.length - 1) {
-    certsliderIndex++;
+    certsliderIndex = (certsliderIndex + 1) % certsliderSlides.length;
     updateCertslider();
-  }
 });
 
-function updateCertslider() {
-  const slideWidth = document.querySelector('.certslider-slide').offsetWidth + 32; // 2 * 1rem margin
-  certsliderTrack.style.transform = `translateX(-${certsliderIndex * slideWidth}px)`;
-}
+certsliderPrev.addEventListener('click', () => {
+    certsliderIndex = (certsliderIndex - 1 + certsliderSlides.length) % certsliderSlides.length;
+    updateCertslider();
+});
+
+// Автоматическая инициализация
+window.addEventListener('load', updateCertslider);
 
 
 
